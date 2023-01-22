@@ -49,3 +49,4 @@ let name2 = {
             //
             console.log(PrintMyName);
             PrintMyName();
+            //
