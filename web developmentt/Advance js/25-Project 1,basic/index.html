@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bulb-container{
+            padding: 30px;
+            
+            
+        }
+        .bulbe{
+            padding: 10px;
+             
+            height:400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>HERE IS MY BULB CONTROL</h1>
+        </div>
+        <MAin>
+            <button onclick="turnOn()">turnOn</button>
+            <button onclick="turnOff()">turnOff</button>
+            <button id="onOffButton" onclick="toggleBulb()">On</button>
+            
+        </MAin>
+
+        <div class="bulb-container">
+        <img id="bulb" class="bulbe" src=" https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Gluehlampe_01_KMJ.jpg/640px-Gluehlampe_01_KMJ.jpg" alt="">
+
+        </div>
+    </header>
+    <script>
+        //turn onn 
+        const turnOff =() =>{
+            //turn off
+            
+            let imgOb  = document.getElementById("bulb");
+            imgOb.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Gluehlampe_01_KMJ.jpg/640px-Gluehlampe_01_KMJ.jpg");
+            
+        }
+//turn off function
+//turn onn
+        const turnOn =() =>{
+            let imObj = document.getElementById("bulb");
+            
+            imObj.setAttribute("src","https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/MSNBC/Components/Photo/_new/081209-light-bulb-03.jpg")
+        };
+
+        //toggle bulb
+        const toggleBulb = ()=>{
+          let imgOb = document.getElementById('bulb');
+          let srcValue = imgOb.getAttribute("src");
+       //   console.log(srcValue);
+
+            let buttonOb = document.getElementById('onOffButton');
+          // let buttonText =  buttonOb.innerHTML;
+
+
+       if(srcValue=='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Gluehlampe_01_KMJ.jpg/640px-Gluehlampe_01_KMJ.jpg'){
+        turnOn();
+        buttonOb.innerText = "OFF";
+       }else{
+        turnOff();
+        buttonOb.innerText = 'ON';
+       }
+        }
+    </script>
+</body>
+</html>
