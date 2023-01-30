@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Watch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+        background-color: black;
+        color: red;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    .container{
+        width: 100%; 
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .clock{
+    font-size: 140px;
+    border: 5px solid red;
+    border-radius: 5px;
+    }
+
+</style>
+</head>
+<body>
+   
+   <div class="container">
+    <span class="clock">3:15 AM</span>
+   </div>
+   <script>
+//get time 
+     const getTime= ()=>{
+        let d = new Date();
+
+        //first method
+        //get hour,min,sec from d
+        // let h = d.getHours();
+        // let m = d.getMinutes();
+        // let s = d.getSeconds();
+
+        // return (`${h}:${m}:${s}`);
+
+        // second method
+        return d.toLocaleTimeString();
+     }
+    // console.log(getTime());
+
+          //updating value after 1 sec by using setinterval
+     setInterval(()=>{
+       // console.log(getTime());
+       //  get element from html and change value of data by using inner html
+       let clockOb = document.querySelector('.clock');
+       clockOb.innerHTML = getTime();
+
+     },1000)
+     
+   </script>
+</body>
+</html>
