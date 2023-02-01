@@ -11,10 +11,10 @@ function addNewWEField(){
     let weOb = document.getElementById('we');
     let weAddButtonOb = document.getElementById('weAddButton') ;
 
-    weOb.insertBefore(newNode,weAddButtonOb)
+    weOb.insertBefore(newNode,weAddButtonOb);
 }
-
-function  addNAQField(){
+  
+function  weADD(){
     let newNode = document.createElement('textarea');
     newNode.classList.add('form-control');
     newNode.classList.add('wefield');
@@ -22,6 +22,8 @@ function  addNAQField(){
     newNode.setAttribute('rows',3);
     newNode.setAttribute('placeholder',"Enter Here");
 
-    let aqOb = document.getElementById("aq");
-    let
+    let aqOb =document.getElementById("aQCall");
+    let weAddOb=document.getElementById("weAddBtn");
+
+    aqOb.insertBefore(newNode,weAddOb);
 }
