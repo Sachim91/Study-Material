@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+ 
+  <title>RESUME MAKER</title>
+
+</head>
+<body>
+  <div class="container">
+    <h3 class="text-center my-2">Resume Generator</h3>
+    <div class="row">
+<!-- first column -->
+      <div class="col -md -6">
+        <h4>Personal Information</h4>
+
+       <div class="form-group my-2">
+        <label for="nameField" id="form-label">Your Name</label>
+        <input
+         type="text"
+          id="nameField" 
+          placeholder="Enter Here" 
+          class="form-control my-2">
+       </div>
+
+       <div class="form-group">
+        <label for="contactField" id="form-label">Your Contact</label>
+        <input
+         type="text" 
+         id="contactField"
+          placeholder="Enter Here" 
+          class="form-control my-2">
+       </div>
+         
+
+       <div class="form-group">
+        <label for="contactField" id="form-label">Address</label>
+        <textarea id="contactField" rows="5"
+        placeholder="Enter Here"
+        class="form-control"
+        ></textarea>
+          
+       </div>
+
+
+       <p class="text-secondary my-3">Imortant Links</p>
+       <div class="form-group my-2">
+        <label for="fbField" id="form-label">FaceBook Link</label>
+        <input
+         type="text"
+          id="fbField" 
+          placeholder="Enter Here" 
+          class="form-control my-2">
+       </div>
+
+       <div class="form-group">
+        <label for="instaField" id="form-label">InstagramLink</label>
+        <input
+         type="text" 
+         id="instaField"
+          placeholder="Enter Here" 
+          class="form-control my-2">
+       </div>
+       <div class="form-group">
+        <label for="LinkedField" id="form-label">LinkedinLink</label>
+        <input
+         type="text" 
+         id="LinkedField"
+          placeholder="Enter Here" 
+          class="form-control my-2">
+       </div>
+         
+      </div>
+
+
+      <!-- second column -->
+      <div class="col -md -6">
+        <h4>Profestional Information</h4>
+        
+       <div class="form-group">
+        <label for="contactField" id="form-label">Objective</label>
+        <textarea id="contactField" 
+        placeholder="Enter Here"
+        class="form-control my-2"
+        ></textarea>
+         </div>
+
+         <div class="form-group" id="we">
+          <label for="contactField" id="form-label">Work Experiance</label>
+          <textarea id="contactField" 
+          placeholder="Enter Here"
+          class="form-control weField my-2"
+          rows="5"
+          ></textarea>
+
+          <!-- new text area after dynamically -->
+              <div class="container text-center mt-3" id=" weAddButton">
+                <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+              </div>
+           </div>
+
+           <div class="form-group" id="aq">
+            <label for="contactField" id="form-label">Acedemic Qualification</label>
+            <textarea id="contactField" 
+            placeholder="Enter Here"
+            class="form-control weField my-2"
+            rows="5"
+            ></textarea>
+                <div class="container text-center my-3">
+
+                   <!-- new text area after dynamically -->
+                  <button   class="btn btn-primary btn-sm" 
+                    onclick="addNAQField()">Add</button>
+                </div>
+             </div>
+
+      </div>
+    </div>
+    <div class="container text-center" i >
+         <button class="btn btn-primary btn-lg ">Generate CV</button>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
