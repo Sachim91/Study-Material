@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Expense Tracker</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center my-5">Expense Tracker</h1>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form id="expense-form">
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" required>
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" class="form-control" id="amount" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Add Expense</button>
+        </form>
+      </div>
+    </div>
+    <div class="row my-5">
+      <div class="col-md-6 offset-md-3">
+        <table class="table table-bordered table-striped" id="expense-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Amount</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="expense-list">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
