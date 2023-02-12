@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      form {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: block;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type:georgian;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+    </style>
+</head>
+<body>
+    <form onsubmit="saveToLocalStorage(event)" action="">
+      <h1 style="text-align: center;" > REGISTRATION FORM</h1>
+        <label for="">Name</label>
+        <input type="text"id="usernameid" name="username">
+        <label for="">EmailId</label>
+        <input type="email" id="useremail" name="emailId">
+        <label for="">Number</label>
+        <input type="tel" id="userno" name="phonenumber">
+        <button>Submit</button>
+    </form>
+    <ul id="listOfitems"></ul>
+
+    <script>
+       function saveToLocalStorage(event){
+        event.preventDefault();
+        const name = event.target.username.value;
+        const email = event.target.emailId.value;
+        const phonenumber = event.target.phonenumber.value;
+
+        localStorage.setItem('name',name)
+        localStorage.setItem('email',email)
+        localStorage.setItem('phonemunber',phonenumber)
+
+           const obj = {
+            name,
+            email,
+            phonenumber
+           }
+        //  localStorage.setItem(obj.email,JSON.stringify(obj))
+         showUserOnScreen(obj)
+       }
+
+       function showUserOnScreen(obj){
+        const parentElem = document.getElementById('listOfitems')
+        const childEle = document.createElement('li')
+        childEle.textContent = obj.name+ " ------------ "+  obj.email+"  ---------------- "+ obj.phonenumber
+       
+        const deleteBtn = document.createElement('input')
+        deleteBtn.type = "button"
+        deleteBtn.value = "Delete"
+
+        const editBtn =document.createElement('input')
+        editBtn.type = "button"
+        editBtn.value = "Edit"
+
+        editBtn.onclick =() =>{
+          localStorage.removeItem(obj.email);
+          parentElem.removeChild(childEle)
+          document.getElementById("usernameid").value = obj.name
+          document.getElementById("useremail").value = obj.email
+          document.getElementById("userno").value = obj.phonenumber
+        }
+
+        deleteBtn.onclick = () =>{
+            localStorage.removeItem(obj.email)
+            parentElem.removeChild(childEle)
+        }
+          childEle.appendChild(deleteBtn)
+          childEle.appendChild(editBtn)
+        parentElem.appendChild(childEle)
+        
+       }
+    </script>
+</body>
+</html>
